@@ -4,6 +4,9 @@ module.exports = function main(inputs) {
     if (inputs['distance'] > 2) {
         distancePrice += Math.floor(inputs['distance'] - 2) * 0.8
     }
+    if (inputs['distance'] > 8) {
+        distancePrice += Math.floor(inputs['distance'] - 8) * 0.4
+    }
     var parkingFee = ParkingFee(inputs['parkTime'])
     return ShouldPay(distancePrice, parkingFee)
 };
